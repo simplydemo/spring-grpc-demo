@@ -10,7 +10,7 @@ version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '11'
 
 ext {
-    // set("springBootGrpcVersion", "2.13.1.RELEASE")
+    set("springBootGrpcVersion", "2.13.1.RELEASE")
     // set("grpcVersion", "1.42.2")
     // set("protobufVersion", "3.20.1")
 }

@@ -48,9 +48,8 @@ public class HelloGrpcService extends HelloServiceGrpc.HelloServiceImplBase {
                     // responseObserver.onError(new RuntimeException("overflow data stream..."));
                     // 요청중 애러발생하면 재처리 루틴을 타거나, drop 처리를 하거나, 지연 처리를 한다.
                     try {
-                        logger.info("서버 부하가 많이 발생 중이여서 처리를 못 함 --- 3 초간 지연");
+                        logger.info("서버 부하가 많이 발생 3 초간 처리를 지연 합니다.");
                         TimeUnit.SECONDS.sleep(3);
-
                         // MyStreamObserver.setBufferSize(10)
                     } catch (InterruptedException ie) {
                         // Thread.currentThread().interrupt();

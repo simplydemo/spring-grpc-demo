@@ -1,0 +1,5 @@
+rootProject.name = 'spring-grpc-demo'
+
+include 'grpc-demo-interface'
+include 'grpc-demo-server'
+include 'grpc-demo-client'
