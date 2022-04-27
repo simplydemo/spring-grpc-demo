@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'maven-publish'
+    id 'java'
+}
+
+group = 'demo.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+ext {
+    set("springBootGrpcVersion", "2.13.1.RELEASE")
+    // set("grpcVersion", "1.42.2")
+    // set("protobufVersion", "3.20.1")
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-activemq'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation("net.devh:grpc-client-spring-boot-starter:${springBootGrpcVersion}")
+    implementation("demo.example:grpc-demo-interface:1.0.0-SNAPSHOT")
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}

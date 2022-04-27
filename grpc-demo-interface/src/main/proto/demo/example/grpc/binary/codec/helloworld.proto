@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "demo.example.grpc.binary.codec";
+option java_outer_classname = "HelloWorldProto";
+
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+  rpc ListFeatures (HelloRequest) returns (stream HelloResponse) {}
+  rpc BatchHello (stream HelloRequest) returns (HelloResponse) {}
+  rpc RouteHello (stream HelloRequest) returns (stream HelloResponse) {}
+}
+
+message HelloRequest {
+  string message = 1;
+}
+
+message HelloResponse {
+  string result = 1;
+}
