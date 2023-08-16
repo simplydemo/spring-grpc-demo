@@ -41,6 +41,10 @@ public class HelloGrpcService extends HelloServiceGrpc.HelloServiceImplBase {
                 previous = request;
                 logger.info("index: {}, message: {}", pointCount, previous.getMessage());
 
+                // send to mq
+                // send to dynamodb
+
+                // exception ---> send to source-mq or send to error-queue or retry-policy or drop-policy
 
                 // process request message
 

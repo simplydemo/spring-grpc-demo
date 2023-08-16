@@ -39,6 +39,8 @@ public class HelloGrpcAsyncClient extends HelloServiceGrpc.HelloServiceImplBase 
         final StreamObserver<HelloRequest> requestObserver = helloBatchStub.batchHello(responseStreamObserver);
         logger.info("init requestObserver");
         try {
+            // size === Queue.SIZE
+            // i (index) retrieve message from Queue
             for (int i = 0; i < size; i++) {
                 HelloRequest request = HelloRequest.newBuilder().setMessage("Hello idx: " + (i + 1)).build();
                 requestObserver.onNext(request);

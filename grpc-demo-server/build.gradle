@@ -7,7 +7,7 @@ plugins {
 
 group = 'demo.example'
 version = '1.0.0-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 ext {
     set("springBootGrpcVersion", "2.13.1.RELEASE")

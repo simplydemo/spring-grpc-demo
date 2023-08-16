@@ -7,7 +7,7 @@ plugins {
 
 group = 'demo.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 ext {
     set("springBootGrpcVersion", "2.13.1.RELEASE")
@@ -24,7 +24,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-activemq'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation("net.devh:grpc-client-spring-boot-starter:${springBootGrpcVersion}")
-    implementation("demo.example:grpc-demo-interface:1.0.0-SNAPSHOT")
+    implementation("demo.example:grpc-demo-interface:1.0.0-SNAPSHOT") // nexus 참조
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
